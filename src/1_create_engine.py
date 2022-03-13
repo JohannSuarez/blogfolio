@@ -86,7 +86,7 @@ def main():
     # Executing with an ORM Session
     '''
     As mentioned previously, most of the patterns and examples above
-    apply to use with the ORM as well, so here we weill introduce this usage
+    apply to use with the ORM as well, so here we we will introduce this usage
     so that as the tutorial proceeds, we will be able to illustrate each pattern
     in terms of Core and ORM use together.
 
