@@ -19,8 +19,9 @@ engine = create_engine(MARIADB_DATABASE_URL, echo=True, future=True)
 Base = declarative_base()
 
 from .tables.person import Person
+from .tables.dht import DHT
 
-Session = sessionmaker(bind=engine)
+SessionLocal = sessionmaker(bind=engine)
 
 
 Base.metadata.create_all(engine)
