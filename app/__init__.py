@@ -1,3 +1,4 @@
+'''
 from sqlalchemy import create_engine, text, MetaData, ForeignKey
 from sqlalchemy import Table, Column, Integer, String
 from sqlalchemy.orm import relationship, sessionmaker, declarative_base
@@ -24,4 +25,6 @@ from .tables.dht import DHT
 SessionLocal = sessionmaker(bind=engine)
 
 
+# Create the tables. It's a one-liner,  I'll leave it here.
 Base.metadata.create_all(engine)
+'''
