@@ -1,5 +1,6 @@
 from typing import List
 from fastapi import Depends, FastAPI, HTTPException
+from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 
 from . import crud, models, schemas
@@ -9,6 +10,8 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
 
 def get_db():
     # Dependency
@@ -17,6 +20,23 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+@app.get("/things/")
+async def read_things(token: str = Depends(oauth2_scheme)):
+    '''
+    Referring to Depends(oauth2_scheme)
+
+    This dependency will provide a str that is assigned to the parameter
+    token of the path operation function.
+
+    FastAPI will know that it can use this dependency to define a "security scheme"
+    in the OpenAPI schema (and the automatic API docs)
+
+    It will go and look in the request for that Authorization header,
+    check if the value is Bearer plus some token, and will return the token as a str.
+    '''
+    return {"token": token}
 
 
 @app.post("/dht/", response_model=schemas.DHT)
