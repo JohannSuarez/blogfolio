@@ -22,7 +22,7 @@ class DHT(DHTBase):
     """
     In the Pydantic models for reading, we add an internal Config class.
     """
-    id: int
+    # id: int
     datetime: datetime
 
     class Config:
