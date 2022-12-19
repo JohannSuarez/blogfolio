@@ -2,7 +2,13 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  background-color: #F6FCFF;
+  height: 100%;
   margin: 0;
 }
 
