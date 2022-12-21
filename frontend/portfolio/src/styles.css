@@ -16,11 +16,11 @@ body {
 
 .container {
   margin: 1rem;
-  text-align: center;
+  /* Conflict with  frontend/portfolio/src/pages/Home.css
+  /* text-align: center; */
 }
 
 .nav {
-
   background-color: rgba(0, 0, 0, 0.01);
   font-family: 'Raleway', sans-serif;
   display: flex;

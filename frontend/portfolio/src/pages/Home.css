@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+@media(max-width: 800px) {
+  .home-components {
+    display: flex;
+    /*
+       Works, but I don't like how I need to use !important.
+       Means I'm overriding something and cohesion is falling apart.
+    */
+    flex-direction: column !important;
+  }
+}
+
+.home-components {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  margin-right: 8%;
+  margin-left: 8%;
+}
+
+.home-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0.5;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+}
+
+/* The text that says "Software Developer" */
+.job-title {
+  text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  line-height: 27px;
+  color: #4098FF;
+
+}
+
+.portrait {
+  display: flex;
+  flex-grow: 1;
+}
