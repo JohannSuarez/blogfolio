@@ -1,4 +1,7 @@
 import './Home.css'
+import LinkButton from '../components/Button.js'
+import Card from '../components/Card.js'
+
 export default function Home() {
   return HomeComponents()
 }
@@ -8,7 +11,7 @@ function HomeComponents() {
     <div className="home-components">
       <div className="home-info">
         <h2 className="job-title">Junior Fullstack Developer</h2>
-        <h1 className="greeting">Hello, my name is Johann Suarez</h1>
+        <h1 className="greeting">Hello, my name is Johann.</h1>
         <h2 className="description">
           I'm a 3rd Year Computer Science student with
           industry experience as a backend developer.
@@ -18,12 +21,17 @@ function HomeComponents() {
         </h2>
 
         <div className="button-group">
-          <h4>button_1</h4>
-          <h4>button_2</h4>
+          <LinkButton label="Github" href="https://github.com/JohannSuarez" />
+          <LinkButton label="LinkedIn" href="https://www.linkedin.com/in/johann-suarez/" />
         </div>
       </div>
       <div className="portrait">
-        <h1>Portrait here</h1>
+        <Card className="portrait-container">
+          <img className="photo"
+            src="https://i.imgur.com/pV0WM33.jpg"
+            width="350px"
+            alt="portrait" />
+        </Card>
       </div>
     </div>)
 }

@@ -1,0 +1,16 @@
+.button {
+  background: #EEEEEE;
+  box-shadow: -5.0934px -5.0934px 15.2802px rgba(255, 255, 255, 0.5), 5.0934px 5.0934px 15.2802px rgba(136, 160, 183, 0.25);
+  border-radius: 8px;
+  cursor: pointer;
+  color: #687891;
+  display: inline-block;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  font-size: 16px;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+}
