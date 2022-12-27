@@ -1,5 +1,6 @@
 import './Home.css'
 import LinkButton from '../components/Button.js'
+import Biometrics from '../components/Biometrics.js'
 import Card from '../components/Card.js'
 
 export default function Home() {
@@ -25,12 +26,13 @@ function HomeComponents() {
           <LinkButton label="LinkedIn" href="https://www.linkedin.com/in/johann-suarez/" />
         </div>
       </div>
-      <div className="portrait">
+      <div className="portrait-section">
         <Card className="portrait-container">
           <img className="photo"
-            src="https://i.imgur.com/pV0WM33.jpg"
+            src="https://i.imgur.com/5SFTIUv.png"
             width="350px"
             alt="portrait" />
+          <Biometrics />
         </Card>
       </div>
     </div>)

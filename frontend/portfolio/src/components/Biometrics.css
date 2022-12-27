@@ -1,6 +1,33 @@
-.card {
-  background: #E4F2F7;
-      box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
-    -8px -8px 18px 0 rgba(255, 255, 255, 0.55);
-  border-radius: 24px;
+.biometric-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: auto;
+}
+
+.biometric-title-div {
+  display: flex;
+  flex-direction: row;
+  margin-top: -15px;
+  margin-bottom: -15px;
+  gap: 10px;
+}
+
+.biometric-data-title {
+  color: #4287f5;
+  font-family: 'Nunito';
+}
+
+.biometric-data-title-date {
+  color: #4287f5;
+  font-family: 'Nunito';
+}
+
+.biometric-text {
+  padding: 2px;
+  font-family: 'Nunito';
+  margin-top: auto;
+  margin-bottom: auto;
 }

@@ -45,7 +45,7 @@
   color: #828282;
 }
 
-.portrait {
+.portrait-section {
   display: flex;
   row-gap: 10px;
 }
