@@ -6,22 +6,16 @@ import Projects from "./pages/Projects"
 import Blog from "./pages/Blog"
 import Contact from "./pages/Contact"
 import { Route, Routes } from "react-router-dom"
+import React, { useEffect } from 'react';
 
 function App() {
-  /*
-  let component
-  switch (window.location.pathname) {
-    case "/":
-      component = <Home />
-      break
-    case "/pricing":
-      component = <Pricing />
-      break
-    case "/about":
-      component = <About />
-      break
-  }
-  */
+
+
+  useEffect(() => {
+    document.title = 'Johann Suarez';
+
+  }, []);
+
   return (
     <>
       <Navbar />
