@@ -1,4 +1,6 @@
 import './Biometrics.css';
+import heart from '../images/icons8-favorite-48.png'
+import sleep from '../images/icons8-moon-and-stars-32.png'
 import React, { useState, useEffect } from 'react';
 
 function get_date() {
@@ -58,14 +60,23 @@ function Biometrics() {
     return <p>An error occurred: {error.message}</p>;
   }
   return (
-    <div class="biometric-panel">
+    <div className="biometric-panel">
 
-      <div class="biometric-title-div">
-        <h3 class="biometric-data-title">Today's Biometrics</h3>
-        <h4 class="biometric-data-title-date">({get_date()})</h4>
+      <div className="biometric-title-div">
+        <h3 className="biometric-data-title">Today's Biometrics</h3>
+        <h4 className="biometric-data-title-date">({get_date()})</h4>
       </div>
-      <h4 class="biometric-text" >🌘 Hours Slept: {(sleep_data / 60).toFixed(2)}</h4>
-      <h4 class="biometric-text" >❤  Resting Heart Rate: {heart_data}</h4>
+
+
+      <div className="biometric-text-line">
+        <img className="biometric-icon" src={sleep} alt="sleep icon" />
+        <h4 className="biometric-text" > Hours Slept: {(sleep_data / 60).toFixed(2)}</h4>
+      </div>
+      <div className="biometric-text-line">
+        <img className="biometric-icon" src={heart} alt="heart icon" />
+        <h4 className="biometric-text" >  Resting Heart Rate: {heart_data}</h4>
+      </div>
+
     </div>
   )
 }

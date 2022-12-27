@@ -25,6 +25,17 @@
   font-family: 'Nunito';
 }
 
+.biometric-text-line {
+  display: flex;
+  flex-direction: row;
+}
+
+.biometric-icon {
+  padding-top: 4px;
+  width: 12px;
+  height: 16px;
+}
+
 .biometric-text {
   padding: 2px;
   font-family: 'Nunito';
