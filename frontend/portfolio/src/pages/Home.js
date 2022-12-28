@@ -14,11 +14,11 @@ function HomeComponents() {
         <h2 className="job-title">Junior Fullstack Developer</h2>
         <h1 className="greeting">Hello, my name is Johann.</h1>
         <h2 className="description">
-          I'm a 3rd Year Computer Science student with
-          industry experience as a backend developer.
-          Short text with details about you,
-          what you do or your professional career.
-          You can add more information on the about page.
+          I'm a Computer Science student with a year of industry experience as a Python and JavaScript backend developer.
+          My education allows me to be a versatile Software Engineer with consideration about design patterns, code efficiency and maintainability.
+          This lets me openly explore high-level frameworks under the rigor and conscientiousness instilled by lower level languages. Outside of my academic and professional pursuits, I enjoy using my programming skills to create
+          visually appealing and interactive projects that draw on my artistic talents.
+          These projects allow me to merge my passions for art and coding, resulting in something truly beautiful.
         </h2>
 
         <div className="button-group">
