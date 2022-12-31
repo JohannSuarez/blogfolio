@@ -1,3 +1,9 @@
+import UnderConstruction from '../components/UnderConstruction.js'
+
 export default function Blog() {
-  return <h1>Blog</h1>
+  return (
+    <div>
+      <UnderConstruction/>
+    </div>
+  )
 }

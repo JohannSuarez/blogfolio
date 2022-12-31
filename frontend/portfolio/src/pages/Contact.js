@@ -1,3 +1,9 @@
+import UnderConstruction from '../components/UnderConstruction.js'
+
 export default function Contact() {
-  return <h1>Contact</h1>
+  return (
+    <div>
+      <UnderConstruction/>
+    </div>
+  )
 }

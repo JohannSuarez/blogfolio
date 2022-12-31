@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Nunito&family=Ubuntu&display=swap');
+
+.UnderConstruction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.UnderConstruction h1 {
+  font-family: 'IBM Plex Sans';
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.UnderConstruction p {
+  font-family: Nunito;
+  font-size: 1.2em;
+  text-align: center;
+  color: #333;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.UnderConstruction img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
