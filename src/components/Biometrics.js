@@ -33,12 +33,12 @@ function Biometrics() {
       setIsLoading(true);
       try {
         let current_date = get_date()
-        const response = await fetch(`http://localhost:8501/sleep/${current_date}`);
+        const response = await fetch(`https://johanns.xyz/biometrics/sleep/${current_date}`);
         const json = await response.json();
         setSleepData(json["totalMinutesAsleep"]);
 
 
-        const response2 = await fetch(`http://localhost:8501/heart/${current_date}`);
+        const response2 = await fetch(`https://johanns.xyz/biometrics/heart/${current_date}`);
         const json2 = await response2.json();
         setHeartData(json2["restingHeartRate"]);
 
