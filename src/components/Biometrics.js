@@ -57,8 +57,15 @@ function Biometrics() {
   }
 
   if (error) {
-    return <p>An error occurred: {error.message}</p>;
+    /* We'll keep this line for debugging
+     * return <p>An error occurred: {error.message}</p>;
+     */
+
+    // This component is optional. For production
+    // we'll just not show it at all if it bugs out.
+    return <div></div>
   }
+
   return (
     <div className="biometric-panel">
 
