@@ -1,0 +1,25 @@
+/* BlogPostCard.css */
+.blogPostCard {
+  background: #E4F2F7;
+  box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
+              -8px -8px 18px 0 rgba(255, 255, 255, 0.55);
+  border-radius: 24px;
+  margin: 10px auto;
+  padding: 10px;
+  max-width: 1200;
+  width: 90%;
+  overflow: hidden;
+}
+
+.blogPostCard img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.blogPostCard p {
+  line-height: 1.6;
+  color: #333;
+  margin: 10px 0;
+}

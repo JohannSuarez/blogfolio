@@ -1,7 +1,7 @@
 // Remove this import if you're not using the UnderConstruction component
 // import UnderConstruction from '../components/UnderConstruction.js'
 
-import Card from '../components/Card.js'
+import BlogPostCard from '../components/BlogPostCard.js'
 
 export default function Projects() {
   return <ProjectsComponents />;
@@ -10,7 +10,8 @@ export default function Projects() {
 function ProjectsComponents() {
   return (
     <div>
-      <Card className="project0">
+      <BlogPostCard className="project0">
+        <h1>pH Sensor System With Programmed Calibration Mode</h1>
         <div className="sketchfab-embed-wrapper">
           <iframe
             title="pH Reading System Case and Mount"
@@ -48,6 +49,7 @@ function ProjectsComponents() {
             >
               Sketchfab
             </a>
+
           </p>
         </div>
 
@@ -72,38 +74,54 @@ function ProjectsComponents() {
           width="350px"
         />
 
-      </Card>
+        <p>
+          Background:  Maintained and improved algae generation tank microcontroller systems.
+          Each tank is monitored by Arduino Megas hooked with sensors to collect light, temperature,
+          and pH levels. The microcontroller uses relay switches to adjust these parameters for algae growth.
 
-      <Card className="IckyBicky">
+          <br/>
+          Contributions:
+          Wrote a program to read from Arduino's serial connection port, parsed the data, and then converted
+          it into tabular data for real-time plotting and visualization using Plotly Dash.
+        </p>
+      </BlogPostCard>
+
+      {/*
+      <BlogPostCard className="IckyBicky">
 
         <img className="pi_display"
           src='https://i.imgur.com/Rveor8E.jpg'
           width="350px"
         />
-      </Card>
+      </BlogPostCard>
+      */}
 
 
-      <Card className="project1">
+      <BlogPostCard className="project1">
+        <h1>ChromaBlend: A Fix to DeepRemaster's Low Resolution Limitation</h1>
         <div className="chromablend">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/IBmc5fa9X9A?si=E7mDBSW0vxQz8xPO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
+        <br/>
         <img className="chroma_blend_animation"
           src='https://i.imgur.com/3ffp1Fz.gif'
           width="350px"
         />
 
+
+        <br/>
         <img className="reference_frame_manual_colorization"
           src='https://i.imgur.com/ZuVE3go.jpg'
           width="350px"
         />
 
-      </Card>
+      </BlogPostCard>
 
-  <Card className="face_tracking_webcam">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TcmhbfcM2XQ?si=GolZ1qMyJUD9ZZ0y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </Card>
+  <BlogPostCard className="face_tracking_webcam">
+    <h1>Face Tracking With a Webcam and Two Servo Motors</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TcmhbfcM2XQ?si=GolZ1qMyJUD9ZZ0y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </BlogPostCard>
     </div>
   );
-
 }
