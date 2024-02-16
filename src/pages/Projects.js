@@ -11,79 +11,112 @@ function ProjectsComponents() {
   return (
     <div>
       <BlogPostCard className="project0">
-        <h1>pH Sensor System With Programmed Calibration Mode</h1>
-        <div className="sketchfab-embed-wrapper">
-          <iframe
-            title="pH Reading System Case and Mount"
-            frameBorder="0"
-            allowFullScreen
-            mozallowfullscreen="true"
-            webkitallowfullscreen="true"
-            allow="autoplay; fullscreen; xr-spatial-tracking"
-            xr-spatial-tracking
-            execution-while-out-of-viewport
-            execution-while-not-rendered
-            web-share
-            src="https://sketchfab.com/models/8ee734ea2b724d068e0283ce7d61ca3d/embed?autospin=1&autostart=1"
-          ></iframe>
-          <p style={{ fontSize: "13px", fontWeight: "normal", margin: "5px", color: "#4A4A4A" }}>
-            <a
-              href="https://sketchfab.com/3d-models/ph-reading-system-case-and-mount-8ee734ea2b724d068e0283ce7d61ca3d?utm_medium=embed&utm_campaign=share-popup&utm_content=8ee734ea2b724d068e0283ce7d61ca3d"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ fontWeight: "bold", color: "#1CAAD9" }}
-            >
-              pH Reading System Case and Mount
-            </a> by <a
-              href="https://sketchfab.com/navier_stoked?utm_medium=embed&utm_campaign=share-popup&utm_content=8ee734ea2b724d068e0283ce7d61ca3d"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ fontWeight: "bold", color: "#1CAAD9" }}
-            >
-              wmosci
-            </a> on <a
-              href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8ee734ea2b724d068e0283ce7d61ca3d"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ fontWeight: "bold", color: "#1CAAD9" }}
-            >
-              Sketchfab
-            </a>
+        <article>
+          <header>
+            <h1>pH Sensor System With Programmed Calibration Mode</h1>
+            <p>By <span class="author">Johann Suarez</span> on <time datetime="YYYY-MM-DD">December 26, 2024</time></p> 
+          </header>
+          <section>
+            <div className="sketchfab-embed-wrapper">
 
-          </p>
-        </div>
+              <video width="200" height="400" controls>
+                <source src="https://i.imgur.com/1Dvw49y.mp4" type="video/mp4"/>
+              </video>
 
-        <img className="irl_ph_sensor"
-          src='https://i.imgur.com/KwyLlw4.jpg'
-          width="350px"
-        />
-        <img className="irl_ph_sensor_oled"
-          src='https://i.imgur.com/uzMdvOr.jpg'
-          width="350px"
-        />
-        <img className="ph_sensor_dimensions"
-          src='https://i.imgur.com/Qczu3Tg.png'
-          width="350px"
-        />
-        <img className="ph_sensor_empty_case"
-          src='https://i.imgur.com/L7AdSkD.png'
-          width="350px"
-        />
-        <img className="ph_sensor_component_diagram"
-          src='https://i.imgur.com/7014Xl0.png'
-          width="350px"
-        />
+              <iframe
+                title="pH Reading System Case and Mount"
+                frameBorder="0"
+                allowFullScreen
+                mozallowfullscreen="true"
+                webkitallowfullscreen="true"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                xr-spatial-tracking
+                execution-while-out-of-viewport
+                execution-while-not-rendered
+                web-share
+                src="https://sketchfab.com/models/8ee734ea2b724d068e0283ce7d61ca3d/embed?autospin=1&autostart=1"
+              ></iframe>
+                <p style={{ fontSize: "13px", fontWeight: "normal", margin: "5px", color: "#4A4A4A" }}>
+                  <a
+                    href="https://sketchfab.com/3d-models/ph-reading-system-case-and-mount-8ee734ea2b724d068e0283ce7d61ca3d?utm_medium=embed&utm_campaign=share-popup&utm_content=8ee734ea2b724d068e0283ce7d61ca3d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontWeight: "bold", color: "#1CAAD9" }}
+                  >
+                    pH Reading System Case and Mount
+                  </a> by <a
+                    href="https://sketchfab.com/navier_stoked?utm_medium=embed&utm_campaign=share-popup&utm_content=8ee734ea2b724d068e0283ce7d61ca3d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontWeight: "bold", color: "#1CAAD9" }}
+                  >
+                    wmosci
+                  </a> on <a
+                    href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8ee734ea2b724d068e0283ce7d61ca3d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontWeight: "bold", color: "#1CAAD9" }}
+                  >
+                    Sketchfab
+                  </a>
+                </p>
+            </div>
 
-        <p>
-          Background:  Maintained and improved algae generation tank microcontroller systems.
-          Each tank is monitored by Arduino Megas hooked with sensors to collect light, temperature,
-          and pH levels. The microcontroller uses relay switches to adjust these parameters for algae growth.
+            <img className="irl_ph_sensor"
+              src='https://i.imgur.com/KwyLlw4.jpg'
+              width="350px"
+            />
+            <img className="irl_ph_sensor_oled"
+              src='https://i.imgur.com/uzMdvOr.jpg'
+              width="350px"
+            />
+            <img className="ph_sensor_dimensions"
+              src='https://i.imgur.com/Qczu3Tg.png'
+              width="350px"
+            />
+            <img className="ph_sensor_empty_case"
+              src='https://i.imgur.com/L7AdSkD.png'
+              width="350px"
+            />
+            <img className="ph_sensor_component_diagram"
+              src='https://i.imgur.com/7014Xl0.png'
+              width="350px"
+            />
 
-          <br/>
-          Contributions:
-          Wrote a program to read from Arduino's serial connection port, parsed the data, and then converted
-          it into tabular data for real-time plotting and visualization using Plotly Dash.
-        </p>
+            <p>
+              For the 2024 December break, I was chosen to work on microcontrollers that monitored
+              algae tanks in an oyster farm. To monitor the algae tanks, pH level sensors, light and temperature sensors
+              were attached to Arduino Megas. The client needed a dashboard to display the data collected by these sensors over time.
+
+              Since the Arduino Megas were alrady connected to Raspberry Pi 400 computers, the data can be read from the Arduino through
+              UART. In Linux, the serial port of a UART device is represented by a file, commonly <b>"/dev/ttyUSB0"</b> or <b>"/dev/ttyUSB1"</b>.
+
+              <img src="https://i.imgur.com/gxSz1VJ.jpeg"/>
+
+              The solution I came up with was to build a Python program that launched <a href="https://dash.plotly.com/">Plotly Dash</a>, and then ran two threads: The first thread reads incoming data from the Arduino
+              from the serial port. The data picked up by the first thread is copied onto a shared queue. The second thread's job is to periodically
+              check if the shared queue has new data. If the second thread notices there is new data, it then parses it into JSON data that Plotly Dash
+              components can recognize. The Plotly Dash is then refreshed and then end result is a webpage with components that graphed realtime sensor data.
+              <br/>
+              <br/>
+
+
+
+              
+
+
+
+              Background:  Maintained and improved algae generation tank microcontroller systems.
+              Each tank is monitored by Arduino Megas hooked with sensors to collect light, temperature,
+              and pH levels. The microcontroller uses relay switches to adjust these parameters for algae growth.
+
+              <br/>
+              Contributions:
+              Wrote a program to read from Arduino's serial connection port, parsed the data, and then converted
+              it into tabular data for real-time plotting and visualization using Plotly Dash.
+            </p>
+          </section>
+        </article>
       </BlogPostCard>
 
       {/*
