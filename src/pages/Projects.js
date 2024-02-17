@@ -2,6 +2,8 @@
 // import UnderConstruction from '../components/UnderConstruction.js'
 
 import BlogPostCard from '../components/BlogPostCard.js'
+import '../styles.css'
+import '../figures.css'
 
 export default function Projects() {
   return <ProjectsComponents />;
@@ -17,12 +19,39 @@ function ProjectsComponents() {
             <p>By <span class="author">Johann Suarez</span> on <time datetime="YYYY-MM-DD">December 26, 2024</time></p> 
           </header>
           <section>
-            <div className="sketchfab-embed-wrapper">
+
+            <div class="row_set">
 
               <video width="200" height="400" controls>
                 <source src="https://i.imgur.com/1Dvw49y.mp4" type="video/mp4"/>
               </video>
 
+              <p>
+                For context, I was chosen to work on microcontrollers that monitored
+                algae tanks in an oyster farm for the 2023 December break. To monitor the algae tanks, pH level sensors, light and temperature sensors
+                were attached to Arduino Megas. The client needed a dashboard to display the data collected by these sensors over time.
+
+                Since the Arduino Megas were alrady connected to Raspberry Pi 400 computers, the data can be read from the Arduino through
+                UART. In Linux, the serial port of a UART device is represented by a file, commonly <b>"/dev/ttyUSB0"</b> or <b>"/dev/ttyUSB1"</b>.
+
+                The solution I came up with was to build a Python program that launched <a href="https://dash.plotly.com/">Plotly Dash</a>, and then ran two threads: The first thread reads incoming data from the Arduino
+                from the serial port. The data picked up by the first thread is copied onto a shared queue. The second thread's job is to periodically
+                check if the shared queue has new data. If the second thread notices there is new data, it then parses it into JSON data that Plotly Dash
+                components can recognize. The Plotly Dash is then refreshed and then end result is a webpage with components that graphed realtime sensor data.
+                <br/>
+                <br/>
+              </p>
+
+            </div>
+
+            <figure class="cap-bot">
+              <img alt="plotly dash on monitor" className="plotly_dash_monitor_image" width="380px" src="https://i.imgur.com/gxSz1VJ.jpeg"/>
+              <figcaption>
+                Dashboard monitors pH level and light 
+              </figcaption>
+            </figure>
+
+            <div className="sketchfab-embed-wrapper">
               <iframe
                 title="pH Reading System Case and Mount"
                 frameBorder="0"
@@ -62,51 +91,33 @@ function ProjectsComponents() {
                 </p>
             </div>
 
-            <img className="irl_ph_sensor"
+            <img alt="completed pH sensor kit setup" className="irl_ph_sensor"
               src='https://i.imgur.com/KwyLlw4.jpg'
               width="350px"
             />
-            <img className="irl_ph_sensor_oled"
+            <img alt="close-up of oled display on pH sensor kit" className="irl_ph_sensor_oled"
               src='https://i.imgur.com/uzMdvOr.jpg'
               width="350px"
             />
-            <img className="ph_sensor_dimensions"
+            <img alt="the sensor kit case dimensions on Blender" className="ph_sensor_dimensions"
               src='https://i.imgur.com/Qczu3Tg.png'
               width="350px"
             />
-            <img className="ph_sensor_empty_case"
+            <img alt="3D printer base case of sensor kit" className="ph_sensor_empty_case"
               src='https://i.imgur.com/L7AdSkD.png'
               width="350px"
             />
-            <img className="ph_sensor_component_diagram"
+            <img alt="component diagram of sensor kit" className="ph_sensor_component_diagram"
               src='https://i.imgur.com/7014Xl0.png'
               width="350px"
             />
-
-            <p>
-              For the 2024 December break, I was chosen to work on microcontrollers that monitored
-              algae tanks in an oyster farm. To monitor the algae tanks, pH level sensors, light and temperature sensors
-              were attached to Arduino Megas. The client needed a dashboard to display the data collected by these sensors over time.
-
-              Since the Arduino Megas were alrady connected to Raspberry Pi 400 computers, the data can be read from the Arduino through
-              UART. In Linux, the serial port of a UART device is represented by a file, commonly <b>"/dev/ttyUSB0"</b> or <b>"/dev/ttyUSB1"</b>.
-
-              <img src="https://i.imgur.com/gxSz1VJ.jpeg"/>
-
-              The solution I came up with was to build a Python program that launched <a href="https://dash.plotly.com/">Plotly Dash</a>, and then ran two threads: The first thread reads incoming data from the Arduino
-              from the serial port. The data picked up by the first thread is copied onto a shared queue. The second thread's job is to periodically
-              check if the shared queue has new data. If the second thread notices there is new data, it then parses it into JSON data that Plotly Dash
-              components can recognize. The Plotly Dash is then refreshed and then end result is a webpage with components that graphed realtime sensor data.
-              <br/>
-              <br/>
-
-
 
               
 
 
 
-              Background:  Maintained and improved algae generation tank microcontroller systems.
+              <br/>
+              Summary:  Maintained and improved algae generation tank microcontroller systems.
               Each tank is monitored by Arduino Megas hooked with sensors to collect light, temperature,
               and pH levels. The microcontroller uses relay switches to adjust these parameters for algae growth.
 
@@ -114,7 +125,6 @@ function ProjectsComponents() {
               Contributions:
               Wrote a program to read from Arduino's serial connection port, parsed the data, and then converted
               it into tabular data for real-time plotting and visualization using Plotly Dash.
-            </p>
           </section>
         </article>
       </BlogPostCard>
@@ -137,14 +147,14 @@ function ProjectsComponents() {
         </div>
 
         <br/>
-        <img className="chroma_blend_animation"
+        <img alt="animation displaying chroma blend's function" className="chroma_blend_animation"
           src='https://i.imgur.com/3ffp1Fz.gif'
           width="350px"
         />
 
 
         <br/>
-        <img className="reference_frame_manual_colorization"
+        <img alt="handpainted reference frame" className="reference_frame_manual_colorization"
           src='https://i.imgur.com/ZuVE3go.jpg'
           width="350px"
         />
