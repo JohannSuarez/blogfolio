@@ -15,6 +15,7 @@ body {
 }
 
 article {
+  font-family: Nunito;
   padding: 15px;
 
 }
@@ -68,6 +69,8 @@ article {
 }
 
 .row_set {
+  padding-left: 50px;
+  padding-right: 50px;
   display: flex;
   align-items: flex-start;
   justify-content: center;

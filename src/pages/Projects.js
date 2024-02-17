@@ -38,8 +38,20 @@ function ProjectsComponents() {
                 from the serial port. The data picked up by the first thread is copied onto a shared queue. The second thread's job is to periodically
                 check if the shared queue has new data. If the second thread notices there is new data, it then parses it into JSON data that Plotly Dash
                 components can recognize. The Plotly Dash is then refreshed and then end result is a webpage with components that graphed realtime sensor data.
+
+
                 <br/>
                 <br/>
+                While building the dashboard, I learned that the current setup had limitations. The sensor readings drift over time and gradually become
+                unreliable. To get around this, the programmer who worked on this project before me did the recalibrations by hardcoding the calculated offsets to the
+                Arduino's readings. Altough this worked short-term, it presented several limitations and drawbacks.
+
+                
+                <ol>
+                 <li>The Arduino code has to be recompiled weekly with new calibration values.</li>
+                 <li>Doing the calculation by hand was time consuming and meant that the entire row of tanks monitored by one Arduino will be taken offline.</li>
+                 <li>The farthest tank for the Arduino was around 5 meters, meaning some pH sensor probes' wires would experience voltage dropoff and reduce its reading accuracy.</li>
+                </ol>
               </p>
 
             </div>
