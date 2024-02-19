@@ -28,45 +28,76 @@ function ProjectsComponents() {
 
               <p>
                 For context, I was chosen to work on microcontrollers that monitored
-                algae tanks in an oyster farm for the 2023 December break. To monitor the algae tanks, pH level sensors, light and temperature sensors
-                were attached to Arduino Megas. The client needed a dashboard to display the data collected by these sensors over time.
+                algae tanks in an oyster farm for the 2023 December break. To monitor the algae tanks, pH level sensors, light, and temperature sensors
+                were attached to Arduino Megas that then relayed the data to Raspberry Pi 400s. 
+                The pH probes were undebatably the most crucial of the sensors, as too high or too low of a reading would indicate that the algae were dying.
+                The client needed a dashboard to display the data collected by these sensors over time.
 
-                Since the Arduino Megas were alrady connected to Raspberry Pi 400 computers, the data can be read from the Arduino through
+
+
+
+                Since the Arduino Megas were already connected to Raspberry Pi's , the data can be read from the Arduino through
                 UART. In Linux, the serial port of a UART device is represented by a file, commonly <b>"/dev/ttyUSB0"</b> or <b>"/dev/ttyUSB1"</b>.
 
                 The solution I came up with was to build a Python program that launched <a href="https://dash.plotly.com/">Plotly Dash</a>, and then ran two threads: The first thread reads incoming data from the Arduino
                 from the serial port. The data picked up by the first thread is copied onto a shared queue. The second thread's job is to periodically
                 check if the shared queue has new data. If the second thread notices there is new data, it then parses it into JSON data that Plotly Dash
-                components can recognize. The Plotly Dash is then refreshed and then end result is a webpage with components that graphed realtime sensor data.
+                components can recognize. The Plotly Dash is then refreshed and then the end result is a webpage with components that graphed realtime sensor data.
 
-
-                <br/>
-                <br/>
-                While building the dashboard, I learned that the current setup had limitations. The sensor readings drift over time and gradually become
-                unreliable. To get around this, the programmer who worked on this project before me did the recalibrations by hardcoding the calculated offsets to the
-                Arduino's readings. Altough this worked short-term, it presented several limitations and drawbacks.
-
-                
-                <ol>
-                 <li>The Arduino code has to be recompiled weekly with new calibration values.</li>
-                 <li>Doing the calculation by hand was time consuming and meant that the entire row of tanks monitored by one Arduino will be taken offline.</li>
-                 <li>The farthest tank for the Arduino was around 5 meters, meaning some pH sensor probes' wires would experience voltage dropoff and reduce its reading accuracy.</li>
-                </ol>
               </p>
 
             </div>
 
-            <figure class="cap-bot">
-              <img alt="plotly dash on monitor" className="plotly_dash_monitor_image" width="380px" src="https://i.imgur.com/gxSz1VJ.jpeg"/>
-              <figcaption>
-                Dashboard monitors pH level and light 
-              </figcaption>
-            </figure>
+            <br/>
+            <div class="row_set">
+              <figure class="cap-bot">
+                <img alt="plotly dash on monitor" className="plotly_dash_monitor_image" width="587" src="https://i.imgur.com/gxSz1VJ.jpeg"/>
+                <figcaption>
+                  Dashboard monitors pH level and light 
+                </figcaption>
+              </figure>
+
+
+              <figure class="cap-bot">
+                <img alt="arduino_and_tanks_diagram" src="https://i.imgur.com/FGOq6XR.png"/>
+                <figcaption>
+                  Each column of 4 algae tanks was monitored by one Arduino.
+                </figcaption>
+              </figure>
+
+            </div>
+            <p class="clearfix sole_paragraph">
+              While building the dashboard, I learned that the current setup had limitations. The pH sensor readings drift over time and gradually become
+              unreliable. To get around this, the programmer who worked on this project before me did the recalibrations by hardcoding the calculated offsets of each sensor probe. 
+              Each offset was then added to the reading of their respective sensor probe in the Arduino's C++ code. Altough this worked short-term, it presented several drawbacks:
+
+              
+              <ol>
+               <li>The Arduino code has to be recompiled weekly with new calibration values.</li>
+               <li>Calibration required doing calculations by hand that took time. The entire column of tanks monitored by one Arduino had to be taken offline to modify its code.</li>
+               <li>The farthest tank for the Arduino was around 5 meters, meaning some pH sensor probes' wires would experience voltage dropoff and reduce its reading accuracy.</li>
+              </ol>
+            </p>
+
+
+
+            <p>These limitations were beyond the scope of the contract I finished. However, I took a crack at addressing them
+            in my spare time. The result of my brainstorming was a pH reading system powered by an ESP32 that had a calibration mode.
+            The component list is as follows:
+
+            <ul>
+              <li>ESP32 Microcontroller - For reading the pH sensor's values, storing calibration offsets, and sending the reading back to the Raspberry Pi through WiFi.</li>
+              <li>4x4 Matrix Membrane Keypad - For going into calibration mode, an ESP32 thread waited for a sequence of key presses (ex: "C" then "A")</li>
+              <li>pH-4052 pH sensor</li>
+              <li>128 x 64 0.91" OLED Display - Regularly displays the pH reading, warns of network issues, and also guides user through calibration mode.</li>
+              <li>3D Printed PLA Case - I needed a housing to hold all of the components together.</li>
+
+            </ul>
+            </p>
 
             <div className="sketchfab-embed-wrapper">
               <iframe
                 title="pH Reading System Case and Mount"
-                frameBorder="0"
                 allowFullScreen
                 mozallowfullscreen="true"
                 webkitallowfullscreen="true"

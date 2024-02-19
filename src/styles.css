@@ -77,3 +77,12 @@ article {
   gap: 20px;
 }
 
+.clearfix {
+  clear: both;
+}
+
+.sole_paragraph {
+  margin-left:50px !important;
+  margin-right:50px !important;
+
+}
