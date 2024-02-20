@@ -78,6 +78,7 @@ article {
   gap: 20px;
 }
 
+
 .clearfix {
   clear: both;
 }
@@ -85,5 +86,35 @@ article {
 .sole_paragraph {
   margin-left:50px !important;
   margin-right:50px !important;
+
+}
+
+/* These rules only apply when the screen is 800px or less */
+@media(max-width: 800px) {
+  .row_set {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .sketchfab-embed-wrapper {
+    display: none;
+  }
+
+  .sole_paragraph {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+
+  }
+
+  video {
+    display: block;
+    margin: 0 auto;
+  }
+
 
 }
