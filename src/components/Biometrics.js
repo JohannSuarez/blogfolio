@@ -1,25 +1,22 @@
 import './Biometrics.css';
-import heart from '../images/icons8-favorite-48.png'
-import sleep from '../images/icons8-moon-and-stars-32.png'
+import heart from '../images/icons8-favorite-48.png';
+import sleep from '../images/icons8-moon-and-stars-32.png';
 import React, { useState, useEffect } from 'react';
 
 function get_date() {
   // Get the current date and time in Vancouver
   const vancouverTime = new Date();
 
-  // Set the timezone offset to -7 hours (Vancouver is in Pacific Time, which is 7 hours behind UTC)
-  vancouverTime.setHours(vancouverTime.getHours() - 7);
+  // Adjust for daylight saving time
+  const timezoneOffset = vancouverTime.getTimezoneOffset();
+  vancouverTime.setMinutes(vancouverTime.getMinutes() - timezoneOffset);
 
-  // Get the day of the month (1-31) and pad it with a leading zero if necessary
+  // Format the date as YYYY-MM-DD
   const day = vancouverTime.getDate().toString().padStart(2, "0");
-
-  // Get the month (0-11) and pad it with a leading zero if necessary
   const month = (vancouverTime.getMonth() + 1).toString().padStart(2, "0");
-
-  // Get the year (four digits)
   const year = vancouverTime.getFullYear();
 
-  return `${year}-${month}-${day}`
+  return `${year}-${month}-${day}`;
 }
 
 function Biometrics() {
@@ -32,15 +29,23 @@ function Biometrics() {
     async function fetchBiometricData() {
       setIsLoading(true);
       try {
-        let current_date = get_date()
-        const response = await fetch(`https://www.johanns.xyz/biometrics/sleep/${current_date}`);
-        const json = await response.json();
-        setSleepData(json["totalMinutesAsleep"]);
+        let current_date = get_date();
+        
+        // Fetch sleep data
+        const response = await fetch(`https://www.johanns.xyz/sleep/${current_date}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const sleepJson = await response.json();
+        setSleepData(sleepJson["totalMinutesAsleep"]);
 
-
-        const response2 = await fetch(`https://www.johanns.xyz/biometrics/heart/${current_date}`);
-        const json2 = await response2.json();
-        setHeartData(json2["restingHeartRate"]);
+        // Fetch heart rate data
+        const response2 = await fetch(`https://www.johanns.xyz/heart/${current_date}`);
+        if (!response2.ok) {
+          throw new Error(`HTTP error! Status: ${response2.status}`);
+        }
+        const heartJson = await response2.json();
+        setHeartData(heartJson["restingHeartRate"]);
 
       } catch (error) {
         setError(error);
@@ -57,35 +62,27 @@ function Biometrics() {
   }
 
   if (error) {
-    /* We'll keep this line for debugging
-     * return <p>An error occurred: {error.message}</p>;
-     */
-
-    // This component is optional. For production
-    // we'll just not show it at all if it bugs out.
-    return <div></div>
+    return <p>An error occurred: {error.message}</p>;
   }
 
   return (
     <div className="biometric-panel">
-
       <div className="biometric-title-div">
         <h3 className="biometric-data-title">Today's Biometrics</h3>
         <h4 className="biometric-data-title-date">({get_date()})</h4>
       </div>
 
-
       <div className="biometric-text-line">
         <img className="biometric-icon" src={sleep} alt="sleep icon" />
-        <h4 className="biometric-text" > Hours Slept: {(sleep_data / 60).toFixed(2)}</h4>
+        <h4 className="biometric-text">Hours Slept: {(sleep_data / 60).toFixed(2)}</h4>
       </div>
       <div className="biometric-text-line">
         <img className="biometric-icon" src={heart} alt="heart icon" />
-        <h4 className="biometric-text" >  Resting Heart Rate: {heart_data}</h4>
+        <h4 className="biometric-text">Resting Heart Rate: {heart_data}</h4>
       </div>
-
     </div>
-  )
+  );
 }
 
 export default Biometrics;
+
