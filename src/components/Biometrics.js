@@ -64,15 +64,15 @@ function Biometrics() {
     return <p>Loading...</p>;
   }
 
-  /*
   if (error) {
   }
-  */
 
+  /*
   if (error) {
     return <p></p>;
   }
 
+  */
   return (
     <div className="biometric-panel">
       <div class="tooltip">
@@ -93,7 +93,7 @@ function Biometrics() {
         </div>
         <span class="tooltiptext">
           This widget queries a FastAPI server that then checks for my most
-          recently logged Fitbit data.
+          recently logged Fitbit data. See "Elsene" and "Phoebe" on my Github.
         </span>
       </div>
     </div>
