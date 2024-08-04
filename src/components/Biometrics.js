@@ -1,7 +1,7 @@
-import './Biometrics.css';
-import heart from '../images/icons8-favorite-48.png';
-import sleep from '../images/icons8-moon-and-stars-32.png';
-import React, { useState, useEffect } from 'react';
+import "./Biometrics.css";
+import heart from "../images/icons8-favorite-48.png";
+import sleep from "../images/icons8-moon-and-stars-32.png";
+import React, { useState, useEffect } from "react";
 
 function get_date() {
   // Get the current date and time in Vancouver
@@ -30,9 +30,11 @@ function Biometrics() {
       setIsLoading(true);
       try {
         let current_date = get_date();
-        
+
         // Fetch sleep data
-        const response = await fetch(`https://www.johanns.xyz/sleep/${current_date}`);
+        const response = await fetch(
+          `https://www.johanns.xyz/sleep/${current_date}`
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -40,13 +42,14 @@ function Biometrics() {
         setSleepData(sleepJson["totalMinutesAsleep"]);
 
         // Fetch heart rate data
-        const response2 = await fetch(`https://www.johanns.xyz/heart/${current_date}`);
+        const response2 = await fetch(
+          `https://www.johanns.xyz/heart/${current_date}`
+        );
         if (!response2.ok) {
           throw new Error(`HTTP error! Status: ${response2.status}`);
         }
         const heartJson = await response2.json();
         setHeartData(heartJson["restingHeartRate"]);
-
       } catch (error) {
         setError(error);
       } finally {
@@ -61,28 +64,40 @@ function Biometrics() {
     return <p>Loading...</p>;
   }
 
+  /*
   if (error) {
-    return <p>An error occurred: {error.message}</p>;
+  }
+  */
+
+  if (error) {
+    return <p></p>;
   }
 
   return (
     <div className="biometric-panel">
-      <div className="biometric-title-div">
-        <h3 className="biometric-data-title">Today's Biometrics</h3>
-        <h4 className="biometric-data-title-date">({get_date()})</h4>
-      </div>
+      <div class="tooltip">
+        <div className="biometric-title-div">
+          <h3 className="biometric-data-title">Today's Biometrics</h3>
+          <h4 className="biometric-data-title-date">({get_date()})</h4>
+        </div>
 
-      <div className="biometric-text-line">
-        <img className="biometric-icon" src={sleep} alt="sleep icon" />
-        <h4 className="biometric-text">Hours Slept: {(sleep_data / 60).toFixed(2)}</h4>
-      </div>
-      <div className="biometric-text-line">
-        <img className="biometric-icon" src={heart} alt="heart icon" />
-        <h4 className="biometric-text">Resting Heart Rate: {heart_data}</h4>
+        <div className="biometric-text-line">
+          <img className="biometric-icon" src={sleep} alt="sleep icon" />
+          <h4 className="biometric-text">
+            Hours Slept: {(sleep_data / 60).toFixed(2)}
+          </h4>
+        </div>
+        <div className="biometric-text-line">
+          <img className="biometric-icon" src={heart} alt="heart icon" />
+          <h4 className="biometric-text">Resting Heart Rate: {heart_data}</h4>
+        </div>
+        <span class="tooltiptext">
+          This widget queries a FastAPI server that then checks for my most
+          recently logged Fitbit data.
+        </span>
       </div>
     </div>
   );
 }
 
 export default Biometrics;
-
