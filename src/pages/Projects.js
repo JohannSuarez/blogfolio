@@ -77,16 +77,52 @@ function ProjectsComponents() {
               coolant gauge with a microcontroller!
             </p>
 
-            <figure class="cap-bot">
-              <img
-                alt="coolant gauge wiring diagram"
-                className="plotly_dash_monitor_image"
-                width="587"
-                src="https://i.imgur.com/wF3xxE8.png"
-              />
-              <figcaption>Wiring diagram of the coolant gauge</figcaption>
-            </figure>
-            <p class="clearfix sole_paragraph"></p>
+            <p class="clearfix sole_paragraph">
+              <figure class="cap-bot">
+                <img
+                  alt="coolant gauge wiring diagram"
+                  className="plotly_dash_monitor_image"
+                  width="587"
+                  src="https://i.imgur.com/wF3xxE8.png"
+                />
+                <figcaption>Wiring diagram of the coolant gauge</figcaption>
+              </figure>
+            </p>
+            <p class="clearfix sole_paragraph">
+              And that's exactly what I did. Here are the materials I needed:
+              <ul>
+                <li>
+                  <b>ESP32 TYPE-C CH340C</b> ($5 CAD) <br />
+                  The microcontroller that queries the engine and renders the
+                  coolant gauge temperature onto the OLED display.
+                </li>
+                <li>
+                  <b>OBD2 16Pin Male Plug</b> ($5 CAD) <br /> The plug we need
+                  for both power and reading data from the engine.
+                </li>
+                <li>
+                  <b>OBD2 Y Splitter</b> ($4.89 CAD) <br /> Optional, but this
+                  leaves you with another OBD port to plug into besides this
+                  project.
+                </li>
+                <li>
+                  <b>MCP2515 CAN Bus module</b> ($4.12 CAD) <br /> The ESP32
+                  understands UART, I2C, and SPI. The engine and every sensor in
+                  modern cars made after 1996 communicate using CAN. This module
+                  converts the CAN signals into SPI packets.
+                </li>
+                <li>
+                  <b>LM2596 DC Buck Converter</b> ($2.82 CAD) <br />
+                  The DC line of the OBD port is wired straight into the car
+                  battery at 12 volts. We have to step the voltage down to 5
+                  volts for our components lest the magic smoke comes out. :)
+                </li>
+                <li>
+                  <b>0.96" 128x64 OLED Display</b> ($2.76 CAD) <br />
+                  We need to see the coolant gauge reading of course.
+                </li>
+              </ul>
+            </p>
             <p class="clearfix sole_paragraph"></p>
           </section>
         </article>
@@ -347,20 +383,30 @@ function ProjectsComponents() {
               <time datetime="YYYY-MM-DD">August 20, 2020</time>
             </p>
           </header>
-          <h3>
-            No need for computationally heavy AI, the Viola-Jones algorithm can
-            do the job.
-          </h3>
-          <h3>Under Construction. Stay tuned! </h3>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/TcmhbfcM2XQ?si=GolZ1qMyJUD9ZZ0y"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+
+          <p class="clearfix sole_paragraph">
+            <h3>
+              No need for computationally heavy AI, the Viola-Jones algorithm
+              can do the job.
+            </h3>
+            <h3>Under Construction. Stay tuned! </h3>
+            <p>
+              TLDR: A webcam affixed to a servo motor (Y rotation) that's
+              mounted on another servo motor (X rotation). The servo motors move
+              accordingly until the identified face is exactly at the center of
+              the webcam's view. Done in MATLAB, but I'd choose Python if I were
+              to do this again.
+            </p>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/TcmhbfcM2XQ?si=GolZ1qMyJUD9ZZ0y"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </p>
         </article>
       </BlogPostCard>
 
@@ -377,12 +423,19 @@ function ProjectsComponents() {
           </header>
 
           <section>
-            <p>
+            <p class="clearfix sole_paragraph">
               <h3>
                 For the purpose of colorizing black and white films without
                 painstakingly handpainting each frame.
               </h3>
-              <h3>Under Construction. Stay tuned! </h3>
+              <h3>
+                Under Construction. Stay tuned! <br />
+              </h3>
+              <p>
+                But in essence, I made this while healing from a broken heart. I
+                wasn't going to let slip the chance to transmute pain into
+                beauty.
+              </p>
               <h3>
                 In the meantime, see:{" "}
                 <a href="https://github.com/JohannSuarez/chroma_blend">
