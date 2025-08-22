@@ -17,14 +17,14 @@ function ProjectsComponents() {
           <header>
             <h1>No Coolant Temperature Gauge? No Problem!</h1>
             <p>
-              By <span class="author">Johann Suarez</span> on{" "}
+              By <span className="author">Johann Suarez</span> on{" "}
               <time datetime="YYYY-MM-DD">April 1, 2024</time>
             </p>
           </header>
           <section>
             <br />
-            <div class="row_set">
-              <figure class="cap-bot">
+            <div className="row_set">
+              <figure className="cap-bot">
                 <img
                   alt="coolant temperature gauge on dashboard"
                   width="582"
@@ -43,7 +43,7 @@ function ProjectsComponents() {
                 />
               </video>
             </div>
-            <p class="clearfix sole_paragraph">
+            <p className="clearfix sole_paragraph">
               I've been using a 2008 Saturn Astra as my daily driver. It's had
               better days with the odometer reading over 280,000 kilometers and
               I being its third owner. One day I popped the hood open and a
@@ -54,7 +54,7 @@ function ProjectsComponents() {
               whole day — I can't afford such an expensive repair or to get
               another car.
             </p>
-            <p class="clearfix sole_paragraph">
+            <p className="clearfix sole_paragraph">
               There was, however, a band-aid fix that should give me some peace
               of mind for a couple months until I've saved up for another beater
               car. I drained the dirty coolant, poured some Bar's Leak Head
@@ -63,7 +63,7 @@ function ProjectsComponents() {
               the gasket.
             </p>
 
-            <p class="clearfix sole_paragraph">
+            <p className="clearfix sole_paragraph">
               The entire experience underscored the importance of knowing the
               current temperature of the engine at any moment in time. Because
               the engine's cooling system was compromised, and my car{" "}
@@ -77,8 +77,8 @@ function ProjectsComponents() {
               coolant gauge with a microcontroller!
             </p>
 
-            <p class="clearfix sole_paragraph">
-              <figure class="cap-bot">
+            <p className="clearfix sole_paragraph">
+              <figure className="cap-bot">
                 <img
                   alt="coolant gauge wiring diagram"
                   className="plotly_dash_monitor_image"
@@ -88,7 +88,7 @@ function ProjectsComponents() {
                 <figcaption>Wiring diagram of the coolant gauge</figcaption>
               </figure>
             </p>
-            <p class="clearfix sole_paragraph">
+            <p className="clearfix sole_paragraph">
               And that's exactly what I did. Here are the materials I needed:
               <ul>
                 <li>
@@ -123,7 +123,7 @@ function ProjectsComponents() {
                 </li>
               </ul>
             </p>
-            <p class="clearfix sole_paragraph"></p>
+            <p className="clearfix sole_paragraph"></p>
           </section>
         </article>
       </BlogPostCard>
@@ -133,12 +133,12 @@ function ProjectsComponents() {
           <header>
             <h1>pH Sensor System With Programmed Calibration Mode</h1>
             <p>
-              By <span class="author">Johann Suarez</span> on{" "}
+              By <span className="author">Johann Suarez</span> on{" "}
               <time datetime="YYYY-MM-DD">December 26, 2023</time>
             </p>
           </header>
           <section>
-            <div class="row_set">
+            <div className="row_set">
               <video width="200" height="400" controls>
                 <source
                   src="https://i.imgur.com/1Dvw49y.mp4"
@@ -174,8 +174,8 @@ function ProjectsComponents() {
             </div>
 
             <br />
-            <div class="row_set">
-              <figure class="cap-bot">
+            <div className="row_set">
+              <figure className="cap-bot">
                 <img
                   alt="plotly dash on monitor"
                   className="plotly_dash_monitor_image"
@@ -185,7 +185,7 @@ function ProjectsComponents() {
                 <figcaption>Dashboard monitors pH level and light</figcaption>
               </figure>
 
-              <figure class="cap-bot">
+              <figure className="cap-bot">
                 <img
                   alt="arduino_and_tanks_diagram"
                   src="https://i.imgur.com/FGOq6XR.png"
@@ -195,7 +195,7 @@ function ProjectsComponents() {
                 </figcaption>
               </figure>
             </div>
-            <p class="clearfix sole_paragraph">
+            <p className="clearfix sole_paragraph">
               While building the dashboard, I learned that the current setup had
               limitations. The pH sensor readings drift over time and gradually
               become unreliable. To get around this, the programmer who worked
@@ -222,7 +222,7 @@ function ProjectsComponents() {
               </ol>
             </p>
 
-            <p class="clearfix sole_paragraph">
+            <p className="clearfix sole_paragraph">
               These limitations were beyond the scope of the contract I
               finished. However, I took a crack at addressing them in my spare
               time. The result of my brainstorming was a pH reading system
@@ -257,7 +257,7 @@ function ProjectsComponents() {
               </ul>
             </p>
 
-            <div class="row_set">
+            <div className="row_set">
               <div className="sketchfab-embed-wrapper">
                 <iframe
                   title="pH Reading System Case and Mount"
@@ -311,7 +311,7 @@ function ProjectsComponents() {
               </div>
             </div>
 
-            <p class="clearfix sole_paragraph">
+            <p className="clearfix sole_paragraph">
               The planned implementation had one of these units mounted above
               each water tank. The WiFi communication offered by the ESP32 meant
               voltage interference from having long physical wires were no
@@ -325,8 +325,8 @@ function ProjectsComponents() {
               persistent memory.
             </p>
 
-            <div class="row_set">
-              <figure class="cap-bot">
+            <div className="row_set">
+              <figure className="cap-bot">
                 <img
                   alt="completed pH sensor kit setup"
                   width="855"
@@ -339,7 +339,7 @@ function ProjectsComponents() {
                 </figcaption>
               </figure>
 
-              <figure class="cap-bot">
+              <figure className="cap-bot">
                 <img
                   alt="planned_esp32_implementation"
                   src="https://i.imgur.com/eWHdzNH.jpg"
@@ -351,7 +351,7 @@ function ProjectsComponents() {
               </figure>
             </div>
 
-            <p class="clearfix sole_paragraph">
+            <p className="clearfix sole_paragraph">
               A great feature of my pH reading unit is it allowed anyone to view
               the current pH reading of an algae tank without needing to walk
               back to the desktop monitor. I designed it to function within the
@@ -379,12 +379,12 @@ function ProjectsComponents() {
           <header>
             <h1>Face Tracking With a Webcam and Two Servo Motors</h1>
             <p>
-              By <span class="author">Johann Suarez</span> on{" "}
+              By <span className="author">Johann Suarez</span> on{" "}
               <time datetime="YYYY-MM-DD">August 20, 2020</time>
             </p>
           </header>
 
-          <p class="clearfix sole_paragraph">
+          <p className="clearfix sole_paragraph">
             <h3>
               No need for computationally heavy AI, the Viola-Jones algorithm
               can do the job.
@@ -417,13 +417,13 @@ function ProjectsComponents() {
               ChromaBlend: A Fix to DeepRemaster's Low Resolution Limitation
             </h1>
             <p>
-              By <span class="author">Johann Suarez</span> on{" "}
+              By <span className="author">Johann Suarez</span> on{" "}
               <time datetime="YYYY-MM-DD">May 21, 2020</time>
             </p>
           </header>
 
           <section>
-            <p class="clearfix sole_paragraph">
+            <p className="clearfix sole_paragraph">
               <h3>
                 For the purpose of colorizing black and white films without
                 painstakingly handpainting each frame.
@@ -443,7 +443,7 @@ function ProjectsComponents() {
                 </a>
               </h3>
             </p>
-            <div class="row_set">
+            <div className="row_set">
               <div className="chromablend">
                 <iframe
                   width="560"
@@ -457,7 +457,7 @@ function ProjectsComponents() {
               </div>
             </div>
 
-            <div class="row_set">
+            <div className="row_set">
               <img
                 alt="animation displaying chroma blend's function"
                 className="chroma_blend_animation"
@@ -466,7 +466,7 @@ function ProjectsComponents() {
               />
             </div>
 
-            <div class="row_set">
+            <div className="row_set">
               <img
                 alt="handpainted reference frame"
                 className="reference_frame_manual_colorization"

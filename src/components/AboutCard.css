@@ -1,0 +1,25 @@
+/* AboutCard.css */
+.AboutCard {
+    background: #E4F2F7;
+    box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
+            -8px -8px 18px 0 rgba(255, 255, 255, 0.55);
+    border-radius: 24px;
+    max-width: 1200px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.AboutCard img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.AboutCard p {
+    line-height: 1.6;
+    color: #333;
+    margin: 10px 0;
+}

@@ -67,12 +67,10 @@ function Biometrics() {
   if (error) {
   }
 
-  /*
   if (error) {
     return <p></p>;
   }
 
-  */
   return (
     <div className="biometric-panel">
       <div class="tooltip">

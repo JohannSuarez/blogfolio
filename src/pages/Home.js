@@ -11,10 +11,10 @@ function HomeComponents() {
   return (
     <div className="home-components">
       <div className="home-info">
-        <h2 className="job-title">Junior Fullstack Developer</h2>
+        <h2 className="job-title">Software Developer</h2>
         <h1 className="greeting">Hello, my name is Johann.</h1>
         <h2 className="description">
-          I'm a Computer Science student with a year of industry experience as a
+          I'm a Computer Science graduate with industry experience as a
           Python and JavaScript backend developer. My education allows me to be
           a versatile Software Engineer with consideration about design
           patterns, code efficiency and maintainability. I can openly explore
@@ -25,6 +25,8 @@ function HomeComponents() {
           aesthetically pleasing. Typically, my projects are a blend of my
           passions for both art and technology, resulting in something truly
           beautiful.
+
+          [ Put a link here for the about page, and from there put the Github and LinkedIn page ]
         </h2>
 
         <div className="button-group">
