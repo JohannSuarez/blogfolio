@@ -119,11 +119,16 @@ article {
 
 h1 {
     font-family: IBM Plex Sans;
+}
 
-
+h2 {
+    font-family: IBM Plex Sans;
 }
 
 h4 {
+}
+
+dd {
     font-family: Nunito;
     font-size: 15px;
 }
