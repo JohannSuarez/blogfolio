@@ -1,10 +1,10 @@
 import "../styles.css";
-import AboutCard from "../components/AboutCard.js";
+import InfoCard from "../components/InfoCard.js";
 
 export default function Contact() {
   return (
     <div >
-        <AboutCard>
+        <InfoCard>
             <dl>
                 <h1>Contact Information:</h1>
 
@@ -15,15 +15,19 @@ export default function Contact() {
                 <dd>250-884-4386</dd> <br/>
 
                 <dt>Github</dt>
-                <dd>https://github.com/JohannSuarez</dd><br/>
+                <dd>
+                    <a href="https://github.com/JohannSuarez" target="_blank" rel="noreferrer">https://github.com/JohannSuarez</a>
+                </dd><br/>
 
                 <dt>LinkedIn</dt>
-                <dd>https://www.linkedin.com/in/johann-suarez</dd><br/>
-
+                <dd>
+                    <a href="https://linkedin.com/in/johann-suarez" target="_blank" rel="noreferrer">https://www.linkedin.com/in/johann-suarez</a>
+                </dd>
+                <br/>
                 <dt>Amateur Radio</dt>
                 <dd>Callsign: VE7-IPC, NARA Monday night net weekly at 8:00PM PST</dd><br/>
             </dl>
-      </AboutCard>
+      </InfoCard>
     </div>
   )
 }
