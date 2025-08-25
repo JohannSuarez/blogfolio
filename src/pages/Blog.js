@@ -1,9 +1,12 @@
+import UnderConstruction from "../components/UnderConstruction.js"
 import "../styles.css";
-import InfoCard from "../components/InfoCard.js";
+// import InfoCard from "../components/InfoCard.js";
 
 export default function Blog() {
   return (
     <div>
+        <UnderConstruction/>
+        {/*
         <InfoCard>
         <p>
             <h3>Topics to write about:</h3>
@@ -15,11 +18,8 @@ export default function Blog() {
                 <h5>CSCI students get very little exposure of this, at least in VIU</h5>
         </p>
 
-
-
-
-
         </InfoCard>
+        */}
     </div>
   )
 }

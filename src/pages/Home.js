@@ -26,7 +26,7 @@ function HomeComponents() {
           passions for both art and technology, resulting in something truly
           beautiful.
 
-          [ Put a link here for the about page, and from there put the Github and LinkedIn page ]
+      {/*[ Put a link here for the about page, and from there put the Github and LinkedIn page ] */}
         </h2>
 
         <div className="button-group">
