@@ -12,6 +12,88 @@ export default function Projects() {
 function ProjectsComponents() {
   return (
     <div>
+      <BlogPostCard className="project4">
+        <article>
+            <header>
+                <h1>1 Node 8 Peripherals (A Proof of Concept)</h1>
+                <p>
+                  By <span className="author">Johann Suarez</span> on{" "}
+                  <time datetime="YYYY-MM-DD">October 2, 2025</time>
+                </p>
+            </header>
+
+            <p>
+            Many weeks ago, my local ham radio club organized a group buy for Meshtastic nodes 
+            and I was able to get myself a RAK node (WisBlock Base + RAK4631 WisBlock Core). 
+            I noticed that the board has UART pins.
+            <br/>
+
+            
+            <img
+              alt="wisblock uart pins"
+              className="wisblock_uart_pins"
+              width="587"
+              src="https://i.imgur.com/XAt1VtL.jpeg"
+            />
+            <br/>
+            <img
+              alt="wiring diagram"
+              className="1_rak_8_peripherals_wiring_diagram"
+              width="587"
+              src="https://i.imgur.com/CcjK4ov.png"
+            />
+
+            <br/>
+            <br/>
+            With this particular model, there were mentions of peripheral limitations. 
+            The manufacturer sells sensors for this board but with proprietary connectors and 
+            a user would be limited by the sensors within their ecosystem.
+            A fellow member from our Discord server expressed concerns of using two of the same soil 
+            moisture sensors at once, and another mentioned that the two sensors possibly have the same I2C address.
+            And what if you wanted to use an exotic sensor that RAKwireless didn't offer? Even if one were content
+            with these limitations, the WisBlock Base only has 3 slots for peripherals.
+
+
+            <br/>
+            <br/>
+            So I had an idea: <b>You can delegate peripheral handling with the UART pins (RX and TX) to another microcontroller as a helper</b>.
+            <br/>
+            Pushing this idea as hard as I can,  this is the result... <br/>
+
+            <br/>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yJ27YwAKKDM?si=Q9N2TLVHR_YvfTiF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      
+            <br/>
+            
+            <br/>
+            This doesn't have to be with a RAK board either. It'll work with any Meshtastic node with TX and RX pins. 
+            The result is one node controlling/querying the following:
+
+            <br/>
+            [ Format this as a list ]
+            <br/>
+
+            - 2 soil moisture sensors
+            - 128x32 OLED display
+            - CO2 sensor
+            - Servo motor
+            - AC relay switch
+            - Buzzer
+            - LED
+
+            <br/>
+            [ Format this as a list ]
+            <br/>
+            With this setup, you get the following perks:
+            No modification of Meshtastic's firmware,
+            No proprietary limitations, use whatever sensor you can find in AliExpress/Amazon/Adafruit,
+            Access to very niche peripherals ( CO2, air pressure, laser range, pH level sensors, etc. ),
+            Theoretically unlimited peripherals. Some MCUs have dozens of pins, and/or you can daisy chain them.,
+            Cheap. It's a $4 microcontroller. You can go cheaper than that.
+
+            </p>
+        </article>
+      </BlogPostCard>
       <BlogPostCard className="project3">
         <article>
           <header>
@@ -431,11 +513,6 @@ function ProjectsComponents() {
               <h3>
                 Under Construction. Stay tuned! <br />
               </h3>
-              <p>
-                But in essence, I made this while healing from a broken heart. I
-                wasn't going to let slip the chance to transmute pain into
-                beauty.
-              </p>
               <h3>
                 In the meantime, see:{" "}
                 <a href="https://github.com/JohannSuarez/chroma_blend">
